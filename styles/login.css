@@ -45,8 +45,8 @@
     margin: 3vh auto;
 }
 .emailInput{
-    background-image: url('../assets/images/icons/Email.png');
+    background-image: url('../assets/images/icons/Email.png') !important;
 }
 .passwordInput{
-    background-image: url('../assets/images/icons/Password.png');
+    background-image: url('../assets/images/icons/Password.png') !important;
 }
