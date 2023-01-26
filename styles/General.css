@@ -7,6 +7,7 @@
 :root{
     --principal: #F2A819;
     --secondary: #8C5F4D;
+    --inputs: #F0F0F0;
 }
 /* Estilos del navbar */
 .navBar{
@@ -34,18 +35,55 @@
     align-items: center;
 }  
 .imageLogo{
-    height: 80px;
-    margin: 0 10px;
+    height: 70px;
+    margin: 0 8px;
     cursor: pointer;
 }
 .imageText{
-    height: 35px;
+    height: 30px;
 }
 
 /* Estilos del pagecontent */
 .pageContent{
-    padding-top: 100px;
+    padding: calc(100px + 1rem) 1rem 1rem;
     min-height: calc(100vh - 80px);
+}
+.btnBack{
+    position: absolute;
+    top: 112px;
+    left: 12px;
+    background: var(--principal);
+    background-image: url('../assets/images/icons/Chevron.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 2vh;
+    cursor: pointer;
+    transition: .6s;
+}
+.btnBack:hover{
+    transform: scale(1.1);
+}
+.btnLarge{
+    width: 250px;
+    background: var(--principal);
+    background-image: url('../assets/images/icons/Chevrons.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center right 20px;
+    color: #fff;
+    border: none;
+    border-radius: 2vh;
+    font-size: 1.5rem;
+    padding: 1vh 50px 1vh 1vh;
+    transition: .6s;
+    cursor: pointer;
+}
+.btnLarge:hover{
+    transform: scale(1.05);
 }
 
 /* Estilos de Footer */

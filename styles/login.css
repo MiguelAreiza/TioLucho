@@ -1,0 +1,52 @@
+/* Estilos del pagecontent */
+.pageContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 100%;
+    text-align: center;
+}
+.logo > img{
+    max-width: 100px;
+}
+.titleLogin{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+#formLogin{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 330px;
+    margin-top: 3vh;
+}
+.formRow{
+    width: 100%;
+    margin: 1.5vh 0;
+}
+.formInput{
+    width: 100%;
+    background: var(--inputs);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center left 15px;
+    border: none;
+    border-radius: 1vh;
+    padding: 1.5vh 2vh 1.5vh 60px;
+    font-size: 1.2rem;
+    outline: none;
+}
+.btnForm{
+    margin: 3vh auto;
+}
+.emailInput{
+    background-image: url('../assets/images/icons/Email.png');
+}
+.passwordInput{
+    background-image: url('../assets/images/icons/Password.png');
+}
