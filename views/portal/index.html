@@ -13,17 +13,27 @@
     <div class="base">
         <div class="navBar">
             <div class="left">
-                <img class="imageLogo" id="LogoHome" src="./assets/images/Logo.svg" alt="Logo" draggable="false">
-                <img class="imageText" src="./assets/images/LogoText.svg" alt="Texto" draggable="false">
+                <img class="imageLogo" id="LogoHome" src="../../assets/images/Logo.svg" alt="Logo" draggable="false">
+                <img class="imageText" src="../../assets/images/LogoText.svg" alt="Texto" draggable="false">
             </div>
             <div class="rigth">
             </div>            
         </div>
         <div class="pageContent">
+            <button class="btnBack" id="btnBack"></button>
             <div class="logo">
-                <img src="./assets/images/Logo.svg" alt="Logo Tio Lucho">
+                <img src="../../assets/images/Logo.svg" alt="Logo Tio Lucho">
             </div>
-            <button class="btnLarge" id="btnStart">Comenzar</button>
+            <label class="titleLogin">Iniciar sesión</label>
+            <form id="formLogin">
+                <div class="formRow">
+                    <input class="formInput emailInput" id="strUser" type="text" placeholder="Ingrese su usuario" autocomplete="off" required>
+                </div>
+                <div class="formRow">
+                    <input class="formInput passwordInput" id="strPass" type="password" placeholder="Ingrese su contraseña" autocomplete="off" required>
+                </div>
+                <button class="btnLarge btnForm" type="submit">Ingresar</button>
+            </form>
         </div>
         <div class="footer">
             <div class="contactUs">
@@ -38,13 +48,12 @@
     </div>
     <div id="notifications">
     </div>
-
     <!-- Generales -->
-    <script src="./js/General.js"></script>
-    <link rel="stylesheet" href="./styles/General.css">
+    <script src="../../js/General.js"></script>
+    <link rel="stylesheet" href="../../styles/General.css">
     
     <!-- Propios -->
-    <script src="./js/index.js"></script>
-    <link rel="stylesheet" href="./styles/index.css">
+    <script src="../../js/portal.js"></script>
+    <link rel="stylesheet" href="../../styles/portal.css">
 </body>
 </html>
