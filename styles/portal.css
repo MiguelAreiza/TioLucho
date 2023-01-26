@@ -12,7 +12,9 @@
 .logo > img{
     max-width: 100px;
 }
-.titleLogin{
+
+
+/* .titleLogin{
     display: block;
     width: 100%;
     text-align: center;
@@ -49,4 +51,4 @@
 }
 .passwordInput{
     background-image: url('../assets/images/icons/Password.png');
-}
+} */
