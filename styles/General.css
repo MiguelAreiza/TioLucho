@@ -4,155 +4,140 @@
     box-sizing: border-box; 
     font-family: 'Poppins', sans-serif;
 }
-
+:root{
+    --principal: #F2A819;
+    --secondary: #8C5F4D;
+}
 /* Estilos del navbar */
 .navBar{
-    background: #000;
+    background: var(--principal);
     width: 100%;
-    height: 12vh;
+    height: 100px;
+    max-height: 100px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 0 10px #333;
     display: flex;
+    flex-wrap: nowrap;
 }
-.navBar > .left, .navBar > .rigth, .navBar > .center{
-    width: 12vh;
+.left{
+    height: 100%;
     display: flex;
+    justify-content: left;
     align-items: center;
-    justify-content: center;
 }
-.navBar > .center{
-    width: calc(100vw - 24vh);
+.rigth{
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}  
+.imageLogo{
+    height: 80px;
+    margin: 0 10px;
+    cursor: pointer;
 }
-.navBar > .left > button, .navBar > .rigth > button{
-    width: 7vh;
-    height: 7vh;
-    border: none;
-    background: transparent;
-    background-size: 100% 100%;
-    transition: .6s;
-}
-.navBar > .left > button:hover, .navBar > .rigth > button:hover{
-    transform: scale(1.1);
+.imageText{
+    height: 35px;
 }
 
 /* Estilos del pagecontent */
 .pageContent{
-    background-image: url('../Images/Fondos/Fondo.png');
-    background-size: contain;
-    margin-top: 12vh;
-    padding: 2vh;
-    min-height: 88vh;    
+    padding-top: 100px;
+    min-height: calc(100vh - 80px);
 }
 
 /* Estilos de Footer */
 .footer{
     width: 100%;
-    background: #000;
-    padding: 2vh;
+    height: 80px;
+    max-height: 80px;
+    background: var(--principal);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-.footer > .contactUs{
-    margin-bottom: 10px;
-}
-.footer > .contactUs > .networks{
-    color: #fff;    
-    font-size: 1.2rem;
+.contactUs{
+    width: 100%;
     text-align: center;
 }
-.footer > .contactUs > .networks > label{
-    display: block;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.networks > .facebook, .networks > .instagram, .networks > .whatsApp{
-    background-size: 100% 100%;
+.facebook, .instagram, .whatsApp{
+    background: transparent;
+    background-size: 30px;
     border: none;
-    border-radius: 10px;
-    width: 35px;
-    height: 35px;
-    margin: 5px;
+    width: 30px;
+    height: 30px;
+    margin: 10px 5px 5px;
     transition: .6s;
 }
-.networks > .facebook:hover, .networks > .instagram:hover, .networks > .whatsApp:hover{
-    transform: scale(1.2);
-    box-shadow: 2px 2px 8px #555;
+.facebook{
+    background-image: url('../assets/images/contact/Facebook.png');    
 }
-.footer > .contactUs > .networks > .facebook{
-    background-image: url('../Images/Contact/FbIcon.png');    
+.instagram{
+    background-image: url('../assets/images/contact/Instagram.png');
 }
-.footer > .contactUs > .networks > .instagram{
-    background-image: url('../Images/Contact/IgIcon.png');
+.whatsApp{
+    background-image: url('../assets/images/contact/WhatsApp.png');
 }
-.footer > .contactUs > .networks > .whatsApp{
-    background-image: url('../Images/Contact/WpIcon.png');
+.facebook:hover, .instagram:hover, .whatsApp:hover{
+    transform: scale(1.1);
 }
-.footer > .copyRight{
+.copyRight{
+    width: 100%;
     text-align: center;
     color: #fff;
-    font-size: 0.875rem;    
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 5px;
-}
-.footer > .handcrafted{
-    text-align: right;
-    color: #fff;
-    font-size: 0.875rem;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 5px 5px 0;
+    font-size: 1rem;
+    padding: 0 10px 5px;
 }
 
 /* Estilos de los toastr */
 #notifications{
-    box-sizing: border-box;
     position: fixed;
     z-index: 9999999;
     pointer-events: none;
     bottom: 12px;
     right: 12px;
 }
-#notifications > .toast{
-    box-sizing: border-box;
+.toast{
     position: relative;
-    margin: 0 0 6px;
+    margin-bottom:6px;
     padding: 15px 15px 15px 50px;
     width: 300px;
     border-radius: 1vh;
     background-position: 15px;
     background-repeat: no-repeat;
     background-size: 24px;
-    box-shadow: 0 0 12px #000;
+    box-shadow: 0 0 8px #000;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     pointer-events: auto;
     contain: content;
     word-wrap: break-word;
 }
-#notifications > .toast:hover{
+.toast:hover{
     box-shadow: 0 0 12px #999;
     cursor: pointer;
 }
-#notifications .toast > b{
+.toast > b{
     display: block;
     font-size: 1.1rem;
     text-shadow: 1px 1px 1px #000;
-    font-family: Arial, Helvetica, sans-serif;
 }
 .toast-info{
     background: #2aa3c3;
-    background-image: url('../Images/Toastr/Info.png');
+    background-image: url('../assets/images/toastr/Info.png');
 }
 .toast-success{
     background: #129620;
-    background-image: url('../Images/Toastr/Success.png');
+    background-image: url('../assets/images/toastr/Success.png');
 }
 .toast-error{
     background: #c53002;
-    background-image: url('../Images/Toastr/Error.png');
+    background-image: url('../assets/images/toastr/Error.png');
 }
 .toast-warning{
     background: #ffa300;
-    background-image: url('../Images/Toastr/Warning.png');
+    background-image: url('../assets/images/toastr/Warning.png');
 }
