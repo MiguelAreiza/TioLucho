@@ -100,7 +100,7 @@ function newId() {
 function ExecSp(spName) {
     return new Promise((resolve, reject) => {
         if (!spName) {
-            return reject('Error en los para metros');
+            return reject('Error en el parametro');
         }
         fetch('https://www.TioLucho.somee.com/api/Procedures/ExecProcedure', {
             method: 'POST',
