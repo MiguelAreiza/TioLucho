@@ -10,7 +10,7 @@
     text-align: center;
 }
 .logo > img{
-    max-width: 100px;
+    max-width: 150px;
 }
 .titleLogin{
     display: block;
@@ -45,8 +45,8 @@
     margin: 3vh auto;
 }
 .emailInput{
-    background-image: url('../assets/images/icons/Email.png') !important;
+    background-image: url('../assets/images/icons/Email.png');
 }
 .passwordInput{
-    background-image: url('../assets/images/icons/Password.png') !important;
+    background-image: url('../assets/images/icons/Password.png');
 }

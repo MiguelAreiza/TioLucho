@@ -47,8 +47,9 @@
     color: #fff;
     font-size: 1.3rem;
     text-align: right;
+    text-transform: capitalize;
 }
-.menu{
+.btnMenu{
     background: transparent;
     background-image: url('../assets/images/Menu.png');
     background-repeat: no-repeat;
