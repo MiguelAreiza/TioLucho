@@ -91,7 +91,23 @@
     cursor: pointer;
     transition: .6s;
 }
-.btnBack:hover{
+.btnAdd{
+    position: absolute;
+    top: calc(100px + 1rem);
+    right: 1rem;
+    background: var(--principal);
+    background-image: url('../assets/images/icons/Add.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 2vh;
+    cursor: pointer;
+    transition: .6s;
+}
+.btnBack:hover, .btnAdd:hover{
     transform: scale(1.1);
 }
 .btnLarge{

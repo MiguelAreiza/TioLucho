@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tio Lucho</title>
+    <link rel="shortcut icon" href="https://miguelareiza.github.io/TioLucho/assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="base">
+        <div class="navBar">
+            <div class="left">
+                <img class="imageLogo" id="LogoHome" src="../../../../assets/images/Logo.png" alt="Logo" draggable="false">
+                <img class="imageText" src="../../../../assets/images/LogoText.png" alt="Texto" draggable="false">
+            </div>
+            <div class="rigth">
+                <label class="titleName" id="nameUser">Miguel areiza</label>
+                <button class="btnMenu" id="userMenu"></button>
+            </div>            
+        </div>
+        <div class="pageContent">            
+            <button class="btnBack" id="btnBack"></button>
+            <button class="btnAdd" id="btnAddUser"></button>
+            <label class="titleUsers">Usuarios</label>
+            <div id="grid">
+                
+            </div>
+        </div>
+        <div class="footer">
+            <div class="contactUs">
+                <button type="button" class="facebook"></button>
+                <button type="button" class="instagram"></button>
+                <button type="button" class="whatsApp"></button>
+            </div>
+            <div class="copyRight">
+                &#169 Miguel Areiza 2023 all rights reserved
+            </div>
+        </div>
+    </div>
+    <div id="notifications">
+    </div>
+
+    <!-- Generales -->
+    <script src="../../../../js/General.js"></script>
+    <link rel="stylesheet" href="../../../../styles/General.css">
+    
+    <!-- Propios -->
+    <script src="../../../../js/admin/usuarios.js"></script>
+    <link rel="stylesheet" href="../../../../styles/admin/usuarios.css">
+</body>
+</html>
