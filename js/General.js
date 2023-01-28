@@ -45,11 +45,11 @@ function Toastr() {
     
             $(`#${id}`).click(()=>{
                 $(`#${id}`).remove();
-            })
+            });
         
             setTimeout(() => {
                 $(`#${id}`).remove();
-            }, 10000);
+            }, 7000);
 
         }
 
@@ -62,9 +62,14 @@ function GoLocation() {
     this.ChangeView = (urlView) => {
 
         fetch(urlView).then(async (response) => {
+
             $('body').html(await response.text());
+            history.pushState(null, "", urlView); 
+
         }).catch(() => {
+
             toastr.Error('Error en la transaccion');
+
         });
 
     }
@@ -98,10 +103,15 @@ function newId() {
 }
 
 function ExecSp(spName) {
+
     return new Promise((resolve, reject) => {
+
         if (!spName) {
+
             return reject('Error en el parametro');
+            
         }
+
         fetch('https://www.TioLucho.somee.com/api/Procedures/ExecProcedure', {
             method: 'POST',
             headers: {
@@ -112,12 +122,18 @@ function ExecSp(spName) {
             }),
             redirect: 'follow'
         }).then(async (response) => {        
+            
             let data = (await response.json());
-            resolve(data);        
-        }).catch((error) => {    
-            reject(error);    
+            resolve(data);    
+
+        }).catch((error) => { 
+
+            reject(error);   
+
         });
+
     });
+
 }
 
 function GetUser() {
@@ -125,8 +141,6 @@ function GetUser() {
     this.Id = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).Id : '';
 
     this.RoleId = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).RoleFk : '';
-
-    this.TeamId = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).TeamFk : '';
 
 }
 
