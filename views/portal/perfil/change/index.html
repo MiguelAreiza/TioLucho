@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tio Lucho</title>
+    <link rel="shortcut icon" href="https://miguelareiza.github.io/TioLucho/assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="base">
+        <div class="navBar">
+            <div class="left">
+                <img class="imageLogo" id="LogoHome" src="../../../../assets/images/Logo.png" alt="Logo" draggable="false">
+                <img class="imageText" src="../../../../assets/images/LogoText.png" alt="Texto" draggable="false">
+            </div>
+            <div class="rigth">
+            </div>            
+        </div>
+        <div class="pageContent">            
+            <button class="btnBack" id="btnBack"></button>
+            <label class="titleChange">Contraseña</label>
+            <form id="formChange">
+                <div class="field">
+                    <label class="titleField">Contraseña actual</label>
+                    <input id="strOldPass" class="inputField passwordInput" type="password" placeholder="Actual contraseña" autocomplete="off" required>
+                </div>
+                <div class="field">
+                    <label class="titleField">Nueva contraseña</label>
+                    <input id="strNewPass" class="inputField passwordInput" type="password" placeholder="Nueva contraseña" autocomplete="off" required>
+                </div>
+                <div class="field">
+                    <label class="titleField">confirmar contraseña</label>
+                    <input id="strConfirmPass" class="inputField passwordInput" type="password" placeholder="Confirar contraseña" autocomplete="off" required>
+                </div>
+                <button class="btnLarge" type="submit" id="bntchange">Actualizar</button>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="contactUs">
+                <button type="button" class="facebook"></button>
+                <button type="button" class="instagram"></button>
+                <button type="button" class="whatsApp"></button>
+            </div>
+            <div class="copyRight">
+                &#169 Miguel Areiza 2023 all rights reserved
+            </div>
+        </div>
+    </div>
+    <div id="notifications">
+    </div>
+
+    <!-- Generales -->
+    <script src="../../../../js/General.js"></script>
+    <link rel="stylesheet" href="../../../../styles/General.css">
+    
+    <!-- Propios -->
+    <script src="../../../../js/change.js"></script>
+    <link rel="stylesheet" href="../../../../styles/change.css">
+</body>
+</html>

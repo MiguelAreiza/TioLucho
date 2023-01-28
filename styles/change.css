@@ -1,0 +1,38 @@
+/* Estilos del pagecontent */
+.titleChange{
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 1rem 0;
+}
+.field{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:  2vh 0;
+}
+.titleField{
+    display: block;
+    width: 350px;
+    font-weight: 700;
+    margin-bottom: 1vh;
+}
+.inputField{    
+    width: 350px;
+    background: var(--inputs);
+    background-image: url('../assets/images/icons/Password.png');
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center left 15px;
+    border: none;
+    border-radius: 1vh;
+    padding: 1.5vh 2vh 1.5vh 60px;
+    font-size: 1.2rem;
+    outline: none;
+}
+.btnLarge{
+    display: block;
+    margin: 7vh auto 0;
+}

@@ -13,35 +13,32 @@
     <div class="base">
         <div class="navBar">
             <div class="left">
-                <img class="imageLogo" id="LogoHome" src="../../assets/images/Logo.png" alt="Logo" draggable="false">
-                <img class="imageText" src="../../assets/images/LogoText.png" alt="Texto" draggable="false">
+                <img class="imageLogo" id="LogoHome" src="../../../assets/images/Logo.png" alt="Logo" draggable="false">
+                <img class="imageText" src="../../../assets/images/LogoText.png" alt="Texto" draggable="false">
             </div>
             <div class="rigth">
                 <label class="titleName" id="nameUser">Miguel areiza</label>
                 <button class="btnMenu" id="userMenu"></button>
             </div>            
         </div>
-        <div class="pageContent">
-            <div class="titleCard">
-                <img src="../../assets/images/Arepa.png" alt="Arepa titulo">
-                <label>Panel principal</label>
-            </div>
-            <div class="cards">
-                <div class="card" id="">
-                    <img src="../../assets/images/cards/Sales.svg" alt="" draggable="false">
-                    <label>Registrar venta</label>
+        <div class="pageContent">            
+            <button class="btnBack" id="btnBack"></button>
+            <label class="titleInventory">Inventario</label>
+            <div class="formInventory">
+                <div class="headerForm">
+                    <label>Producto</label>
+                    <label>Cargue</label>
+                    <label>Stock</label>
                 </div>
-                <div class="card" id="">
-                    <img src="../../assets/images/cards/Inventory.svg" alt="" draggable="false">
-                    <label>Inventario</label>
+                <div class="bodyForm">                    
+                    <div id="record1" class="record">
+                        <label>Carne</label>
+                        <label>4</label>
+                        <label>2</label>                          
+                    </div>
                 </div>
-                <div class="card" id="">
-                    <img src="../../assets/images/cards/Clients.svg" alt="" draggable="false">
-                    <label>Clientes</label>
-                </div>
-                <div class="card" id="">
-                    <img src="../../assets/images/cards/Liquidation.svg" alt="" draggable="false">
-                    <label>Liquidación</label>
+                <div class="footerForm">
+                    <label id="dateInventory">Fecha: 20/12/2022</label>
                 </div>
             </div>
         </div>
@@ -60,11 +57,11 @@
     </div>
 
     <!-- Generales -->
-    <script src="../../js/General.js"></script>
-    <link rel="stylesheet" href="../../styles/General.css">
+    <script src="../../../js/General.js"></script>
+    <link rel="stylesheet" href="../../../styles/General.css">
     
     <!-- Propios -->
-    <script src="../../js/portal.js"></script>
-    <link rel="stylesheet" href="../../styles/portal.css">
+    <script src="../../../js/inventario.js"></script>
+    <link rel="stylesheet" href="../../../styles/inventario.css">
 </body>
 </html>

@@ -1,0 +1,29 @@
+/* Estilos del pagecontent */
+.logo{
+    width: 100%;
+    text-align: center;
+    margin-top: 1vh;
+}
+.logo > img{
+    max-width: 150px;
+    border-radius: 0 0 50% 50%;
+}
+#strName{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.btnLarge{
+    display: block;
+    width: 280px;
+    margin: 2vh auto;
+    font-size: 1.2rem;
+}
+#btnLogOut{
+    color: #f00;
+    margin-top: 10vh;
+    background: var(--principal);
+    padding: 1vh;
+}
