@@ -59,7 +59,7 @@
     box-shadow: inset 0 0 10px var(--optional);
 }
 #btnAdd{
-    display: none;
+    display: block;
     width: 100px;
     background: var(--principal);
     color: #fff;

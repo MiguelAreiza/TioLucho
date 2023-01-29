@@ -2,5 +2,10 @@
 
 $(document).ready( () => {
 
+    $('#btnBack').click( () => {
+
+        goLocation.ChangeView('../../');
+
+    });
 
 })

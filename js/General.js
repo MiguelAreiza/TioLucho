@@ -61,10 +61,11 @@ function GoLocation() {
 
     this.ChangeView = (urlView) => {
 
-        fetch(urlView).then(async (response) => {
+        history.pushState(null, "", urlView); 
 
+        fetch('./').then(async (response) => {
+            
             $('body').html(await response.text());
-            history.pushState(null, "", urlView); 
 
         }).catch(() => {
 
