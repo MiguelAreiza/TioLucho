@@ -55,9 +55,7 @@ $(document).ready( () => {
 
     function onScanSuccess(qrCodeMessage) {
         
-        let sound = new Audio('../../../assets/sounds/barcode.wav');
-        sound.play();
-        sound.remove();
+        $('#audioQr')[0].play();
 
         if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(qrCodeMessage)) {            
             toastr.Warning('Qr no valido');
