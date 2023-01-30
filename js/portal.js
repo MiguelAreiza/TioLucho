@@ -24,7 +24,7 @@ $(document).ready( () => {
     });
     
     $('#cardSale').click( () => {
-        goLocation.ChangeView('./registrarVenta/');
+        goLocation.ChangeView('./venta/');
     });
     
     $('#cardInventory').click( () => {
