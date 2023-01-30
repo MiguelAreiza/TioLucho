@@ -151,7 +151,7 @@ $(document).ready( () => {
         let cantC = e.target[2].value;
         let total = e.target[3].value;
 
-        if (sales.filter(sale => sale.produ == produ).length > 0) {
+        if (sales.filter(sale => sale.prodId == prodId).length > 0) {
             toastr.Warning('Ya ingresaste este producto');
             return;
         }
