@@ -19,30 +19,30 @@ if (!sessionStorage.AppUser) {
 
 $(document).ready( () => {
 
-    // function onScanSuccess(qrCodeMessage) {
-    //     $('#strClient').val(qrCodeMessage.toLowerCase());
-    // }
+    function onScanSuccess(qrCodeMessage) {
+        $('#strClient').val(qrCodeMessage.toLowerCase());
+    }
     
-    // function onScanError(errorMessage) {
-    //     toastr.Info('Enfoca el codigo');
-    // }
+    function onScanError(errorMessage) {
+        toastr.Info('Enfoca el codigo');
+    }
     
-    // var Scanner = new Html5QrcodeScanner(
-    //     "reader", { 
-    //         fps: 10, 
-    //         qrbox: 250 
-    //     }
-    // );
+    var Scanner = new Html5QrcodeScanner(
+        "reader", { 
+            fps: 10, 
+            qrbox: 250 
+        }
+    );
     
-    // Scanner.render(onScanSuccess, onScanError);
+    Scanner.render(onScanSuccess, onScanError);
     
-    // $("#reader > div:nth-child(1)").hide();
-    // $("#reader__dashboard_section_csr > div > button").click();
-    // $("#reader__dashboard_section > div:nth-child(2)").hide();
+    $("#reader > div:nth-child(1)").hide();
+    $("#reader__dashboard_section_csr > div > button").click();
+    $("#reader__dashboard_section > div:nth-child(2)").hide();
 
-    // if ($("#reader__camera_selection")[0][1]) {
-    //     $("#reader__camera_selection").val($("#reader__camera_selection")[0][1].value)
-    // }
+    if ($("#reader__camera_selection")[0][1]) {
+        $("#reader__camera_selection").val($("#reader__camera_selection")[0][1].value)
+    }
 
     ExecSp(`sp_GetClientsByRouteId '${getUser.RouteId}'`).then( data => {
 
