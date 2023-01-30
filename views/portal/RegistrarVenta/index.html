@@ -7,6 +7,7 @@
     <title>Tio Lucho</title>
     <link rel="shortcut icon" href="https://miguelareiza.github.io/TioLucho/assets/images/favicon.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://reeteshghimire.com.np/wp-content/uploads/2021/05/html5-qrcode.min_.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,15 +18,14 @@
                 <img class="imageText" src="../../../assets/images/LogoText.png" alt="Texto" draggable="false">
             </div>
             <div class="rigth">
-                <label class="titleName" id="nameUser">Miguel areiza</label>
+                <label class="titleName" id="nameUser"></label>
                 <button class="btnMenu" id="userMenu"></button>
             </div>            
         </div>
         <div class="pageContent">            
             <button class="btnBack" id="btnBack"></button>
             <label class="titleSale">Registrar venta</label>
-            <select id="strClient" autocomplete="off" disabled>
-                <option value="">El llanerito</option>
+            <select id="strClient" disabled>
             </select>
             <div class="formSale">
                 <div class="headerForm">
@@ -35,43 +35,24 @@
                     <label>Total</label>
                 </div>
                 <div class="bodyForm">
-                    <div class="records">
-                        <div id="record1" class="record">
-                            <label>Carne</label>
-                            <label>4</label>
-                            <label>0</label>
-                            <label>$ 12.000</label>                            
-                        </div>
-                        <div id="record1" class="record">
-                            <label>Carne</label>
-                            <label>4</label>
-                            <label>0</label>
-                            <label>$ 12.000</label>                            
-                        </div>
-                        <div id="record1" class="record">
-                            <label>Carne</label>
-                            <label>4</label>
-                            <label>0</label>
-                            <label>$ 12.000</label>                            
-                        </div>                        
+                    <div id="records">               
                     </div>
-                    <div class="input">                        
+                    <form class="input" id="formSale">
                         <div class="inputField">
-                            <select id="strProduct">
-                                <option value="">camaleon</option>
+                            <select id="strProduct" autocomplete="off" required>
                             </select>
                         </div>
                         <div class="inputField">
-                            <input type="number" placeholder="Cantidad" autocomplete="off">
+                            <input id="IntCantV" type="number" min="1" placeholder="Cantidad" autocomplete="off" required>
                         </div>
                         <div class="inputField">
-                            <input type="number" placeholder="Cantidad" autocomplete="off">
+                            <input id="IntCantC" type="number" min="0" placeholder="Cantidad" autocomplete="off" required>
                         </div>
                         <div class="inputField">
-                            <input type="text" autocomplete="off" disabled>
+                            <input id="IntTotal" type="text" placeholder="Total" autocomplete="off" disabled>
                         </div>
-                    </div>
-                    <button id="btnAdd">Agregar</button>
+                        <button type="submit" id="btnAdd">Agregar</button>
+                    </form>
                 </div>
                 <div class="footerForm">
                     <label id="totalInvoice">$ 10.000</label>
@@ -95,6 +76,8 @@
         </div>
     </div>
     <div id="notifications">
+    </div>    
+    <div id="reader">
     </div>
 
     <!-- Generales -->

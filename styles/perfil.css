@@ -8,10 +8,11 @@
     max-width: 150px;
     border-radius: 0 0 50% 50%;
 }
-#strName{
+#nameUser{
     display: block;
     width: 100%;
     text-align: center;
+    text-transform: capitalize;
     font-size: 1.5rem;
     font-weight: 700;
 }

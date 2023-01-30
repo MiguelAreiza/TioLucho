@@ -37,12 +37,12 @@
     background-position: center left 15px;
     border: none;
     border-radius: 1vh;
-    padding: 1.5vh 2vh 1.5vh 60px;
+    padding: 1.5vh 1.5vh 1.5vh 60px;
     font-size: 1.2rem;
     outline: none;
 }
 .btnForm{
-    margin: 3vh auto;
+    margin: 3vh auto 0;
 }
 .emailInput{
     background-image: url('../assets/images/icons/Email.png');

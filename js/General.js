@@ -112,7 +112,7 @@ function ExecSp(spName) {
             return reject('Error en el parametro');
             
         }
-
+        
         fetch('https://www.TioLucho.somee.com/api/Procedures/ExecProcedure', {
             method: 'POST',
             headers: {
@@ -122,12 +122,12 @@ function ExecSp(spName) {
                 "procedure": spName
             }),
             redirect: 'follow'
-        }).then(async (response) => {        
+        }).then(async response => {
             
             let data = (await response.json());
             resolve(data);    
 
-        }).catch((error) => { 
+        }).catch( error => {
 
             reject(error);   
 
@@ -143,6 +143,16 @@ function GetUser() {
 
     this.RoleId = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).RoleFk : '';
 
+    this.RouteId = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).RouteFk : '';
+
+    this.NameUser = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).StrName : '';
+
+}
+
+function MoneyCast(numb) {
+    let str = numb.toString().split(".");
+    str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return `$ ${str.join(".")}`;
 }
 
 var redirect = new Redirect();

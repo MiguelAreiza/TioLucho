@@ -1,4 +1,5 @@
 'use strict';
+sessionStorage.removeItem('AppUser');
 
 $(document).ready( () => {
 

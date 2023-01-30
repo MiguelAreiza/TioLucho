@@ -33,15 +33,19 @@
     font-weight: 700;
     padding: 1vh;
 }
+.record{
+    display: flex;
+    flex-wrap: nowrap;
+}
 .record > label{
     display: block;
-    width: 100%;
+    width: 25%;
     text-align: center;
     padding: .5vh;
 }
-.input, .record{
+.input{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .inputField{
     width: 25%;
@@ -107,4 +111,13 @@
 .btnFormSale:hover{
     background: var(--secondary);
     transform: scale(1.1);
+}
+#reader{
+    width: 100vw;
+    height: 100vh;
+    background: var(--principal);
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
