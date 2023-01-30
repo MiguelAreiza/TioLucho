@@ -1,0 +1,90 @@
+/* Estilos del pagecontent */
+.titleCost{
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 1rem 0;
+}
+#formCost{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3vh;
+}
+#formCost > input{    
+    width: 45%;
+    background: var(--inputs);
+    border: none;
+    border-radius: 1vh;
+    padding: .5vh;
+    font-size: 1rem;
+    text-align: center;
+    margin: auto;
+    outline: none;
+    border-bottom: 2px solid var(--principal);
+}
+#formCost > button{
+    width: 30%;
+    background: var(--principal);
+    color: #fff;
+    border: none;
+    border-radius: 1vh;
+    padding: .5vh;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2vh auto 0;
+    outline: none;
+    transition: .6s;
+}
+#formCost > button:hover{
+    transform: scale(1.1);
+}
+.formCost{
+    width: 100%;
+    background: #f1f2f3;
+    border-radius: 1vh;
+    margin: 3vh 0;
+}
+.headerForm{
+    background: var(--optional);
+    border-radius: 1vh 1vh 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.headerForm > label{
+    width: calc(100% / 3);
+    text-align: center;
+    font-weight: 700;
+    padding: 1vh;
+}
+.record{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.record > label{
+    width: calc(100% / 3);
+    display: block;
+    text-align: center;
+    padding: .5vh;
+}
+.footerForm{
+    background: var(--optional);
+    border-radius: 0 0 1vh 1vh;
+    display: flex;
+    justify-content: right;
+}
+.footerForm > label{
+    width: calc(100% / 3);
+    text-align: center;
+    font-weight: 700;
+    padding: 1vh;
+    color: #090;
+}
+.btnLarge{
+    display: block;
+    margin: auto;
+    margin-top: 5vh;
+}

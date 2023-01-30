@@ -23,17 +23,22 @@
         </div>
         <div class="pageContent">            
             <button class="btnBack" id="btnBack"></button>
-            <label class="titleInventory">Inventario</label>
-            <div class="formInventory">
+            <label class="titleCost">Gastos</label>
+            <form id="formCost">
+                <input id="strRemarks" type="text" placeholder="Destalle" autocomplete="off" required>
+                <input id="intTotal" type="number" min="0" placeholder="Total" autocomplete="off" required>
+                <button type="submit">Agregar</button>
+            </form>
+            <div class="formCosts">
                 <div class="headerForm">
-                    <label>Producto</label>
-                    <label>Cargue</label>
-                    <label>Stock</label>
+                    <label>Fecha</label>
+                    <label>Detalle</label>
+                    <label>Total</label>
                 </div>
                 <div class="bodyForm" id="records">
                 </div>
                 <div class="footerForm">
-                    <label id="dateInventory"></label>
+                    <label id="totalCosts"></label>
                 </div>
             </div>
         </div>
@@ -56,7 +61,7 @@
     <link rel="stylesheet" href="../../../styles/General.css">
     
     <!-- Propios -->
-    <script src="../../../js/inventario.js"></script>
-    <link rel="stylesheet" href="../../../styles/inventario.css">
+    <script src="../../../js/gasto.js"></script>
+    <link rel="stylesheet" href="../../../styles/gasto.css">
 </body>
 </html>

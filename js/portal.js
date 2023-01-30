@@ -38,5 +38,9 @@ $(document).ready( () => {
     $('#cardLiquidation').click( () => {
         goLocation.ChangeView('./liquidacion/');
     });
+    
+    $('#cardCosts').click( () => {
+        goLocation.ChangeView('./gasto/');
+    });
 
 });

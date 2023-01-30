@@ -174,25 +174,41 @@ $(document).ready( () => {
             toastr.Warning('Ya ingresaste este producto');
             return;
         }
-        
-        $('#records').append(`<div id="record${sales.length + 1}" class="record">
+
+        ExecSp(`sp_ValidateStock '${getUser.Id}', '${prodId}'`).then( data => {
+
+            if (data[0].rpta == 0) {
+                toastr.Info('No cuentas con stock de este producto');
+                return;
+            }
+            
+            if (data[0].IntStock < (parseInt(cantV) + parseInt(cantC))) {                
+                toastr.Info(`No te alcanza, solo cuentas con ${data[0].IntStock} unidades`);
+                return;
+            }
+
+            $('#records').append(`<div id="record${sales.length + 1}" class="record">
                                 <label>${produ}</label>
                                 <label>${cantV}</label>
                                 <label>${cantC}</label>
                                 <label>${total}</label>
                             </div> `);
         
-        sales.push({'prodId':prodId,'cantV':cantV,'cantC':cantC,'total':total});
+            sales.push({'prodId':prodId,'cantV':cantV,'cantC':cantC,'total':total});
 
-        let actual = parseFloat($('#totalInvoice').html().split(' ')[1].replace(',',''));
-        let nuevo = parseFloat(total.split(' ')[1].replace(',',''));
+            let actual = parseFloat($('#totalInvoice').html().split(' ')[1].replace(',',''));
+            let nuevo = parseFloat(total.split(' ')[1].replace(',',''));
 
-        $('#totalInvoice').html(MoneyCast(actual + nuevo));
+            $('#totalInvoice').html(MoneyCast(actual + nuevo));
 
-        e.target[0].value = '';
-        e.target[1].value = '';
-        e.target[2].value = '';
-        e.target[3].value = '';
+            e.target[0].value = '';
+            e.target[1].value = '';
+            e.target[2].value = '';
+            e.target[3].value = '';
+        
+        }).catch( error => {
+            goLocation.ChangeView('../');
+        });
 
     });
 
