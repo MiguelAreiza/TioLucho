@@ -18,6 +18,40 @@ if (!sessionStorage.AppUser) {
 }
 
 $(document).ready( () => {
+    
+    let sales = []; 
+
+    ExecSp(`sp_GetProducts`).then( data => {
+
+        if (data[0].rpta == 0) {
+            toastr.Info('Aun no existen productos');
+            return;
+        }
+
+        let html = `<option value="">Producto</option>`;
+
+        for (let i = 0; i < data.length; i++) {
+            html += `<option value="${data[i].Id}/${data[i].IntPrice}/${data[i].StrName}">${data[i].StrName}</option>`;
+        }
+
+        $('#strProduct').html(html);
+    
+    }).catch( error => {
+        goLocation.ChangeView('../');
+    });
+
+    var Scanner = new Html5QrcodeScanner(
+        "reader", { 
+            fps: 10, 
+            qrbox: 250 
+        }
+    );
+    
+    Scanner.render(onScanSuccess, onScanError);
+    
+    $("#reader > div:nth-child(1)").hide();
+    $("#reader__dashboard_section_csr > div > button").click();
+    $("#reader__dashboard_section > div:nth-child(2)").hide();
 
     function onScanSuccess(qrCodeMessage) {
         
@@ -37,9 +71,11 @@ $(document).ready( () => {
                 return;
             }
             
-            $('#strClient').val(qrCodeMessage.toLowerCase());
+            $('#strClient').html(`<option value="${data[0].Id}">${data[0].StrName}</option>`);
 
-            $('#reader').remove();
+            setTimeout(() => {                
+                $('#reader').remove();
+            }, 200);
         
         }).catch( error => {
             toastr.Info('Intentalo de nuevo', 'Error en la lectura');
@@ -50,40 +86,6 @@ $(document).ready( () => {
     function onScanError(errorMessage) {
         toastr.Info('Enfoca el codigo');
     }
-    
-    var Scanner = new Html5QrcodeScanner(
-        "reader", { 
-            fps: 10, 
-            qrbox: 250 
-        }
-    );
-    
-    Scanner.render(onScanSuccess, onScanError);
-    
-    $("#reader > div:nth-child(1)").hide();
-    $("#reader__dashboard_section_csr > div > button").click();
-    $("#reader__dashboard_section > div:nth-child(2)").hide();
-
-    ExecSp(`sp_GetClientsByRouteId '${getUser.RouteId}'`).then( data => {
-
-        if (data[0].rpta == 0) {
-            toastr.Info('Aun no existen clientes para esta ruta');
-            return;
-        }
-        
-        let html = `<option value="">Cliente</option>`;
-
-        for (let i = 0; i < data.length; i++) {
-            html += `<option value="${data[i].Id}">${data[i].StrName}</option>`;
-        }
-
-        $('#strClient').html(html);
-    
-    }).catch( error => {
-        goLocation.ChangeView('../');
-    });    
-    
-    let sales = [];
     
     $('#btnBack, #LogoHome, #btnCancel').click( () => {        
         goLocation.ChangeView('../');
@@ -131,26 +133,7 @@ $(document).ready( () => {
         });    
 
     });
-    
-    ExecSp(`sp_GetProducts`).then( data => {
 
-        if (data[0].rpta == 0) {
-            toastr.Info('Aun no existen productos');
-            return;
-        }
-        
-        let html = `<option value="">Producto</option>`;
-
-        for (let i = 0; i < data.length; i++) {
-            html += `<option value="${data[i].Id}/${data[i].IntPrice}/${data[i].StrName}">${data[i].StrName}</option>`;
-        }
-
-        $('#strProduct').html(html);
-    
-    }).catch( error => {
-        goLocation.ChangeView('../');
-    });
-    
     $('#strProduct, #IntCantV').change( (e) => {
         let cant = e.target.form[1].value;
         let price = e.target.form[0].value.split('/')[1];
