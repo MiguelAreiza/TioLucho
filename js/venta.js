@@ -40,9 +40,11 @@ $(document).ready( () => {
     $("#reader__dashboard_section_csr > div > button").click();
     $("#reader__dashboard_section > div:nth-child(2)").hide();
 
-    if ($("#reader__camera_selection")[0][1]) {
-        $("#reader__camera_selection").val($("#reader__camera_selection")[0][1].value)
-    }
+    setTimeout(() => {debugger
+        if ($("#reader__camera_selection")[0].length > 1) {
+            $("#reader__camera_selection").val($("#reader__camera_selection")[0][1].value)
+        }
+    }, 3000);
 
     ExecSp(`sp_GetClientsByRouteId '${getUser.RouteId}'`).then( data => {
 
