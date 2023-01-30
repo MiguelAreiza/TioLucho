@@ -20,7 +20,31 @@ if (!sessionStorage.AppUser) {
 $(document).ready( () => {
 
     function onScanSuccess(qrCodeMessage) {
-        $('#strClient').val(qrCodeMessage.toLowerCase());
+        
+        let sound = new Audio('../../../assets/sounds/barcode.wav');
+        sound.play();
+        sound.remove();
+
+        if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(qrCodeMessage)) {            
+            toastr.Warning('Qr no valido');
+            return;
+        }
+
+        ExecSp(`sp_ValidateClientQR '${qrCodeMessage}', '${getUser.RouteId}'`).then( data => {
+
+            if (data[0].rpta == 0) {
+                toastr.Warning('Cliente no registrado');
+                return;
+            }
+            
+            $('#strClient').val(qrCodeMessage.toLowerCase());
+
+            $('#reader').remove();
+        
+        }).catch( error => {
+            toastr.Info('Intentalo de nuevo', 'Error en la lectura');
+        });
+
     }
     
     function onScanError(errorMessage) {
@@ -40,12 +64,6 @@ $(document).ready( () => {
     $("#reader__dashboard_section_csr > div > button").click();
     $("#reader__dashboard_section > div:nth-child(2)").hide();
 
-    setTimeout(() => {debugger
-        if ($("#reader__camera_selection")[0].length > 1) {
-            $("#reader__camera_selection").val($("#reader__camera_selection")[0][1].value)
-        }
-    }, 3000);
-
     ExecSp(`sp_GetClientsByRouteId '${getUser.RouteId}'`).then( data => {
 
         if (data[0].rpta == 0) {
@@ -63,18 +81,55 @@ $(document).ready( () => {
     
     }).catch( error => {
         goLocation.ChangeView('../');
-    });
-
-    
+    });    
     
     let sales = [];
     
-    $('#btnBack, #LogoHome').click( () => {        
+    $('#btnBack, #LogoHome, #btnCancel').click( () => {        
         goLocation.ChangeView('../');
     });
     
-    $('#btnChangePass').click( () => {
-        goLocation.ChangeView('./change/');
+    $('#btnSave').click( () => {
+        
+        if (sales.length < 1) {
+            toastr.Warning('No tienes registros para facturar');
+            return;
+        }
+
+        ExecSp(`sp_CreateInvoice '${getUser.Id}', '${$('#strClient').val()}', '${new Date().toISOString()}'`).then(async data => {
+
+            if (data[0].rpta == -1 || data[0].rpta == -2) {
+                toastr.Warning('Intentalo de nuevo, error al generar consecutivo');
+                return;
+            }
+            
+            let invoice = data[0].Id;
+
+            for (let i = 0; i < sales.length; i++) {
+                let prodId = sales[i].prodId;
+                let cantV = sales[i].cantV;
+                let cantC = sales[i].cantC;
+                let total = parseFloat(sales[i].total.split(' ')[1].replace(',', ''));
+                await ExecSp(`sp_CreateSale '${invoice}', '${prodId}', ${cantV}, ${cantC}, ${total}`).then( data => {
+                    if (data[0].rpta == -1 || data[0].rpta == -2) {
+                        toastr.Warning('Error en Proceso de facturación');
+                        return
+                    }                
+                }).catch( error => {
+                    toastr.Warning('Error en Proceso de facturación');
+                    return
+                });
+            }
+
+            toastr.Success('Factura generada con exito');
+            setTimeout(() => {
+                goLocation.ChangeView('../');
+            }, 2000);
+        
+        }).catch( error => {
+            toastr.Error('Error al generar la factura, intentalo de nuevo');
+        });    
+
     });
     
     ExecSp(`sp_GetProducts`).then( data => {
@@ -110,6 +165,7 @@ $(document).ready( () => {
         e.preventDefault();
 
         let produ = e.target[0].value.split('/')[2];
+        let prodId = e.target[0].value.split('/')[0];
         let cantV = e.target[1].value;
         let cantC = e.target[2].value;
         let total = e.target[3].value;
@@ -126,7 +182,12 @@ $(document).ready( () => {
                                 <label>${total}</label>
                             </div> `);
         
-        sales.push({'produ':produ,'cantV':cantV,'cantC':cantC,'total':total});
+        sales.push({'prodId':prodId,'cantV':cantV,'cantC':cantC,'total':total});
+
+        let actual = parseFloat($('#totalInvoice').html().split(' ')[1].replace(',',''));
+        let nuevo = parseFloat(total.split(' ')[1].replace(',',''));
+
+        $('#totalInvoice').html(MoneyCast(actual + nuevo));
 
         e.target[0].value = '';
         e.target[1].value = '';

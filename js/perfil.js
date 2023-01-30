@@ -27,7 +27,7 @@ $(document).ready( () => {
         goLocation.ChangeView('./change/');
     });
     
-    if (getUser.RoleId.toUpperCase() == '57712132-2A95-430A-8198-E3665E80D8D2') {
+    if (getUser.RoleId.toUpperCase() == 'D8042D1F-6879-46A2-8EF3-39C06EB15529') {
         
         $('#btnOptions').click( () => {
             goLocation.ChangeView('../admin/');
