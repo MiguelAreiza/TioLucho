@@ -46,10 +46,10 @@
     justify-content: right;
 }
 .footerForm > label{
-    width: calc(100% / 4);
-    text-align: center;
+    width: 100%;
+    text-align: right;
     font-weight: 700;
-    padding: 1vh;
+    padding: 1vh 3vh;
     color: #090;
 }
 .btnLarge{
