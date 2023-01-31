@@ -172,11 +172,11 @@
     min-width: 200px;
     margin: 1vh auto;
 }
-.titleField{
+.titleFieldForm{
     font-size: 1.1rem;
     font-weight: 700;
 }
-.inputField{
+.inputFieldForm{
     width: 100%;
     background: var(--inputs);
     background-repeat: no-repeat;
