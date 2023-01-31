@@ -17,7 +17,6 @@ if (!sessionStorage.AppUser) {
     });
 }
 
-
 $(document).ready( () => {
 
     $('#btnBack, #LogoHome').click( () => {        

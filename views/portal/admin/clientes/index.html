@@ -42,6 +42,37 @@
     </div>
     <div id="notifications">
     </div>
+    <div class="modal">
+        <a class="closeModal"></a>
+        <form id="formClient">
+            <label class="titleForm">Registro clientes</label>            
+            <div class="fieldForm">
+                <label class="titleField">Ruta</label>
+                <select class="inputField route" id="routeFk" required>
+                    <option value="">Ruta</option>
+                </select>
+            </div>
+            <div class="fieldForm">
+                <label class="titleField">Nombre</label>
+                <input class="inputField name" type="text" placeholder="Nombre" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleField">Celular</label>
+                <input class="inputField tel" type="tel" placeholder="Celular" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleField">Dirección</label>
+                <input class="inputField address" type="text" placeholder="Dirección" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleField">Activo</label>
+                <input class="inputField" type="checkbox">
+            </div>
+            <div class="contBtn">
+                <button id="btnSaveClient" class="btnLarge" type="submit">Guardar cliente</button>
+            </div>
+        </form>
+    </div>
 
     <!-- Generales -->
     <script src="../../../../js/General.js"></script>
@@ -50,5 +81,12 @@
     <!-- Propios -->
     <script src="../../../../js/admin/clientes.js"></script>
     <link rel="stylesheet" href="../../../../styles/admin/clientes.css">
+
+    <!-- Kendo grid -->
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.3.1109/styles/kendo.default-main.min.css">
+    <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/messages/kendo.messages.es-ES.min.js"></script>
+    
 </body>
 </html>

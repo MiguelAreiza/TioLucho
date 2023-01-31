@@ -111,6 +111,8 @@
     transform: scale(1.1);
 }
 .btnLarge{
+    display: block;
+    margin: auto;
     width: 250px;
     background: var(--principal);
     background-image: url('../assets/images/icons/Chevrons.png');
@@ -127,6 +129,97 @@
 }
 .btnLarge:hover{
     transform: scale(1.05);
+}
+.modal{
+    display: none;
+    width: 80vw;
+    position: fixed;
+    top: 10vh;
+    left: 10vw;
+    z-index: 9999;
+    background: #fff;
+    border-radius: 2vh;
+    box-shadow: 0 0 6px #777;
+    contain: content;
+}
+.closeModal{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-image: url('../assets/images/toastr/Error.png');
+    background-size: 30px;
+    cursor: pointer;
+}
+.modal > form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.titleForm{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2vh;
+}
+.fieldForm{
+    width: 45%;
+    min-width: 200px;
+    margin: 1vh auto;
+}
+.titleField{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.inputField{
+    width: 100%;
+    background: var(--inputs);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center left 15px;
+    border: none;
+    border-radius: 1vh;
+    padding: 1.5vh 1.5vh 1.5vh 60px;
+    font-size: 1.1rem;
+    outline: none;
+}
+.inputField:focus{    
+    border-bottom: 2px solid var(--principal);
+}
+.contBtn{
+    width: 100%;
+}
+.btnEdit{
+    background-image: url('../../assets/images/icons/Edit.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: .6s;
+}
+.btnEdit:hover{
+    transform: scale(1.1);
+}
+.route{
+    background-image: url('../assets/images/icons/Route.png');
+}
+.name{
+    background-image: url('../assets/images/icons/Name.png');
+}
+.tel{
+    background-image: url('../assets/images/icons/Tel.png');
+}
+.address{
+    background-image: url('../assets/images/icons/Address.png');
 }
 
 /* Estilos de Footer */
