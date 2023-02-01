@@ -133,6 +133,7 @@
 .modal{
     display: none;
     width: 80vw;
+    max-height: 80vh;
     position: fixed;
     top: 10vh;
     left: 10vw;
@@ -141,6 +142,10 @@
     border-radius: 2vh;
     box-shadow: 0 0 6px #777;
     contain: content;
+    overflow-y: scroll;
+}
+.modal::-webkit-scrollbar{
+    width: 0;
 }
 .closeModal{
     width: 30px;
@@ -194,8 +199,7 @@
 .contBtn{
     width: 100%;
 }
-.btnEdit{
-    background-image: url('../../assets/images/icons/Edit.png');
+.btnEdit, .btnQR{
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: center;
@@ -206,7 +210,13 @@
     height: 20px;
     transition: .6s;
 }
-.btnEdit:hover{
+.btnEdit{    
+    background-image: url('../../assets/images/icons/Edit.png');
+}
+.btnQR{    
+    background-image: url('../../assets/images/icons/QR.png');
+}
+.btnEdit:hover, .btnQR:hover{
     transform: scale(1.1);
 }
 .route{

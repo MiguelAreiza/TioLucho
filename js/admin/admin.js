@@ -19,7 +19,7 @@ if (!sessionStorage.AppUser) {
 
 $(document).ready( () => {
 
-    $('#btnBack, #LogoHome, #btnCancel').click( () => {        
+    $('#btnBack, #LogoHome').click( () => {        
         goLocation.ChangeView('../');
     });
 

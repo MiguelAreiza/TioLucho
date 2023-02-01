@@ -82,7 +82,7 @@ $(document).ready( () => {
     }
     
     function onScanError(errorMessage) {
-        toastr.Info('Enfoca el codigo');
+        // toastr.Info('Enfoca el codigo');
     }
     
     $('#btnBack, #LogoHome, #btnCancel').click( () => {        
