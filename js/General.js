@@ -155,35 +155,6 @@ function MoneyCast(numb) {
     return `$ ${str.join(".")}`;
 }
 
-function NewGrid(grid, data, fields, columns) {
-
-    $(`#${grid}`).kendoGrid({
-        language: "es-ES",
-        dataSource: data,
-        autoSync: true,
-        schema: {
-            model: {
-                fields: fields,
-            },
-        },
-        height: 350,
-        scrollable: true,
-        sortable: true,
-        filterable: true,
-        resizable: true,
-        editable: false,
-        toolbar: ["excel", "search"],
-        mobile: true,
-        dataBound: function () {
-            for (var i = 0; i < this.columns.length; i++) {
-            this.autoFitColumn(i);
-            }
-        },
-        columns: columns
-    });
-    
-}
-
 var redirect = new Redirect();
 var toastr = new Toastr();
 var goLocation = new GoLocation();

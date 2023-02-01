@@ -19,7 +19,7 @@ if (!sessionStorage.AppUser) {
 
 $(document).ready( () => {
 
-    LoadGrid()
+    LoadGrid();
 
     $('#btnBack, #LogoHome').click( () => {        
         goLocation.ChangeView('../');
@@ -124,20 +124,38 @@ $(document).ready( () => {
                 toastr.Info('Aun no hay clientes registrados');
                 return;
             }
-    
-            NewGrid(
-                'gridClients', 
-                data, 
-                {
-                    Id: { type: "string", editable: false },
-                    RouteFk: { type: "string", editable: false },
-                    StrQRCode: { type: "string", editable: false },
-                    StrName: { type: "string", editable: false },
-                    StrTel: { type: "string", editable: false },
-                    StrAddress: { type: "string", editable: false },
-                    BlActive: { type: "string", editable: false }
-                }, 
-                [
+
+            $('#gridClients').kendoGrid({
+                language: "es-ES",
+                dataSource: data,
+                autoSync: true,
+                schema: {
+                    model: {
+                        fields: {
+                            Id: { type: "string", editable: false },
+                            RouteFk: { type: "string", editable: false },
+                            StrQRCode: { type: "string", editable: false },
+                            StrName: { type: "string", editable: false },
+                            StrTel: { type: "string", editable: false },
+                            StrAddress: { type: "string", editable: false },
+                            BlActive: { type: "string", editable: false }
+                        }
+                    },
+                },
+                height: 350,
+                scrollable: true,
+                sortable: true,
+                filterable: true,
+                resizable: true,
+                editable: false,
+                toolbar: ["excel", "search"],
+                mobile: true,
+                dataBound: function () {
+                    for (var i = 0; i < this.columns.length; i++) {
+                    this.autoFitColumn(i);
+                    }
+                },
+                columns: [
                     { 
                         command: [
                             { 
@@ -166,8 +184,8 @@ $(document).ready( () => {
                         title: "Dirección"
                     }
                 ]
-            );            
-                
+            });
+            
         }).catch( error => {
             toastr.Error('Contacta tu administrador');
         });

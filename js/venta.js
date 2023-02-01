@@ -65,7 +65,7 @@ $(document).ready( () => {
         ExecSp(`sp_ValidateClientQR '${qrCodeMessage}', '${getUser.RouteId}'`).then( data => {
 
             if (data[0].rpta == 0) {
-                toastr.Warning('Cliente no registrado');
+                toastr.Warning('Cliente no registrado para esta ruta');
                 return;
             }
             
@@ -82,7 +82,7 @@ $(document).ready( () => {
     }
     
     function onScanError(errorMessage) {
-        // toastr.Info('Enfoca el codigo');
+        toastr.Info('Enfoca el codigo');
     }
     
     $('#btnBack, #LogoHome, #btnCancel').click( () => {        
