@@ -44,8 +44,8 @@ $(document).ready( () => {
 
         $('#records').html(html);
         $('#totalCosts').html(MoneyCast(total));
-            
-    }).catch( error => {
+        
+    }).catch( error => {debugger
         toastr.Error('Contacta tu administrador');
     });
 

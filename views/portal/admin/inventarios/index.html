@@ -25,7 +25,7 @@
             <button class="btnBack" id="btnBack"></button>
             <button class="btnAdd" id="btnAddInventory"></button>
             <label class="titleInventories">inventarios</label>
-            <div id="grid">
+            <div id="gridInventories">
                 
             </div>
         </div>
@@ -42,7 +42,34 @@
     </div>
     <div id="notifications">
     </div>
-
+    <div class="modal">
+        <a class="closeModal"></a>
+        <form id="formInventory">
+            <label class="titleForm">Registro inventario</label>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Usuario</label>
+                <select class="inputFieldForm name" id="userFk" required>
+                </select>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Producto</label>
+                <select class="inputFieldForm product" id="productFk" required>
+                </select>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Cargue</label>
+                <input id="intLoad" class="inputFieldForm cant" min="0" type="number" placeholder="Cargue" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Stock</label>
+                <input id="intStock" class="inputFieldForm cant" min="0" type="number" placeholder="Stock" required>
+            </div>
+            <div class="contBtn">
+                <button class="btnLarge" type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+    
     <!-- Generador y lector de QR -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://reeteshghimire.com.np/wp-content/uploads/2021/05/html5-qrcode.min_.js"></script>

@@ -10,6 +10,7 @@
     --optional: #D9D9D9;
     --inputs: #F0F0F0;
 }
+
 /* Estilos del navbar */
 .navBar{
     background: var(--principal);
@@ -199,6 +200,12 @@
 .contBtn{
     width: 100%;
 }
+.email{
+    background-image: url('../assets/images/icons/Email.png');
+}
+.pass{
+    background-image: url('../assets/images/icons/Password.png');
+}
 .route{
     background-image: url('../assets/images/icons/Route.png');
 }
@@ -210,6 +217,24 @@
 }
 .address{
     background-image: url('../assets/images/icons/Address.png');
+}
+.category{
+    background-image: url('../assets/images/icons/Category.png');
+}
+.money{
+    background-image: url('../assets/images/icons/Money.png');
+}
+.role{
+    background-image: url('../assets/images/icons/Role.png');
+}
+.document {
+    background-image: url('../assets/images/icons/Document.png');
+}
+.product {
+    background-image: url('../assets/images/icons/Product.png');
+}
+.cant {
+    background-image: url('../assets/images/icons/Cant.png');
 }
 
 /* Estilos de Footer */

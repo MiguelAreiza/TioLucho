@@ -44,9 +44,3 @@
 .btnForm{
     margin: 3vh auto 0;
 }
-.emailInput{
-    background-image: url('../assets/images/icons/Email.png');
-}
-.passwordInput{
-    background-image: url('../assets/images/icons/Password.png');
-}

@@ -25,7 +25,7 @@
             <button class="btnBack" id="btnBack"></button>
             <button class="btnAdd" id="btnAddCategory"></button>
             <label class="titleCategories">Categorias</label>
-            <div id="grid">
+            <div id="gridCategories">
                 
             </div>
         </div>
@@ -41,6 +41,19 @@
         </div>
     </div>
     <div id="notifications">
+    </div>
+    <div class="modal">
+        <a class="closeModal"></a>
+        <form id="formCategory">
+            <label class="titleForm">Registro categoría</label>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Nombre</label>
+                <input id="strName" class="inputFieldForm name" type="text" placeholder="Nombre" required>
+            </div>
+            <div class="contBtn">
+                <button class="btnLarge" type="submit">Guardar</button>
+            </div>
+        </form>
     </div>
 
     <!-- Generador y lector de QR -->

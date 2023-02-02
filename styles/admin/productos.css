@@ -7,3 +7,26 @@
     text-align: center;
     margin: 1rem 0;
 }
+.btnEdit, .btnDelete{
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: .6s;
+}
+.btnEdit{    
+    background-image: url('../../assets/images/icons/Edit.png');
+}
+.btnDelete{    
+    background-image: url('../../assets/images/icons/Delete.png');
+}
+.btnEdit:hover, .btnDelete:hover{
+    transform: scale(1.1);
+}
+.btnLarge{
+    margin: 3vh auto;
+}

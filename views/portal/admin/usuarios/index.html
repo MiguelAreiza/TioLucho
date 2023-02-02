@@ -17,7 +17,7 @@
                 <img class="imageText" src="../../../../assets/images/LogoText.png" alt="Texto" draggable="false">
             </div>
             <div class="rigth">
-                <label class="titleName" id="nameUser">Miguel areiza</label>
+                <label class="titleName" id="nameUser"></label>
                 <button class="btnMenu" id="userMenu"></button>
             </div>            
         </div>
@@ -25,7 +25,7 @@
             <button class="btnBack" id="btnBack"></button>
             <button class="btnAdd" id="btnAddUser"></button>
             <label class="titleUsers">Usuarios</label>
-            <div id="grid">
+            <div id="gridUsers">
                 
             </div>
         </div>
@@ -41,6 +41,53 @@
         </div>
     </div>
     <div id="notifications">
+    </div>
+    <div class="modal">
+        <a class="closeModal"></a>
+        <form id="formUser">
+            <label class="titleForm">Registro usuario</label>                        
+            <div class="fieldForm">
+                <label class="titleFieldForm">Rol</label>
+                <select class="inputFieldForm role" id="roleFk" required>
+                </select>
+            </div>            
+            <div class="fieldForm">
+                <label class="titleFieldForm">Ruta</label>
+                <select class="inputFieldForm route" id="routeFk" required>
+                </select>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Documento</label>
+                <input id="strDoc" class="inputFieldForm document" type="text" placeholder="Documento" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Nombre</label>
+                <input id="strName" class="inputFieldForm name" type="text" placeholder="Nombre" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Celular</label>
+                <input id="strTel" class="inputFieldForm tel" type="tel" placeholder="Celular" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Usuario</label>
+                <input id="strUser" class="inputFieldForm email" type="text" placeholder="Usuario" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Contraseña</label>
+                <input id="strPass" class="inputFieldForm pass" type="password" placeholder="Contraseña" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Confirmación</label>
+                <input id="strConfirm" class="inputFieldForm pass" type="password" placeholder="Confirmación" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Activo</label>
+                <input id="blActive" class="inputFieldForm" type="checkbox" checked>
+            </div>
+            <div class="contBtn">
+                <button class="btnLarge" type="submit">Guardar</button>
+            </div>
+        </form>
     </div>
 
     <!-- Generador y lector de QR -->

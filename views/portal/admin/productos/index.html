@@ -17,7 +17,7 @@
                 <img class="imageText" src="../../../../assets/images/LogoText.png" alt="Texto" draggable="false">
             </div>
             <div class="rigth">
-                <label class="titleName" id="nameUser">Miguel areiza</label>
+                <label class="titleName" id="nameUser"></label>
                 <button class="btnMenu" id="userMenu"></button>
             </div>            
         </div>
@@ -25,7 +25,7 @@
             <button class="btnBack" id="btnBack"></button>
             <button class="btnAdd" id="btnAddProduct"></button>
             <label class="titleProducts">Productos</label>
-            <div id="grid">
+            <div id="gridProducts">
                 
             </div>
         </div>
@@ -41,6 +41,36 @@
         </div>
     </div>
     <div id="notifications">
+    </div>
+    <div class="modal">
+        <a class="closeModal"></a>
+        <form id="formProduct">
+            <label class="titleForm">Registro producto</label>            
+            <div class="fieldForm">
+                <label class="titleFieldForm">Categoría</label>
+                <select class="inputFieldForm category" id="categoryFk" required>
+                </select>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Nombre</label>
+                <input id="strName" class="inputFieldForm name" type="text" placeholder="Nombre" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Costo</label>
+                <input id="intCost" class="inputFieldForm money" min="0" type="number" placeholder="Costo" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Venta</label>
+                <input id="intPrice" class="inputFieldForm money" min="0" type="number" placeholder="Venta" required>
+            </div>
+            <div class="fieldForm">
+                <label class="titleFieldForm">Activo</label>
+                <input id="blActive" class="inputFieldForm" type="checkbox" checked>
+            </div>
+            <div class="contBtn">
+                <button class="btnLarge" type="submit">Guardar</button>
+            </div>
+        </form>
     </div>
 
     <!-- Generador y lector de QR -->

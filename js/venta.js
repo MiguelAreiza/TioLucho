@@ -184,7 +184,7 @@ $(document).ready( () => {
 
             e.target[0].value = '';
             e.target[1].value = '';
-            e.target[2].value = '';
+            e.target[2].value = 0;
             e.target[3].value = '';
         
         }).catch( error => {

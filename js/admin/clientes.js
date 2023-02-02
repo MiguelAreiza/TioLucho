@@ -28,16 +28,16 @@ $(document).ready( () => {
     $('#btnAddClient').click( () => {
         $('.modal').show();
         LoadRoutes();
+        $('#blActive').prop("checked", true);
     });
 
     $('.closeModal').click( () => {
         $('.modal').hide();
-        LoadGrid();
         $('#cardQR').html('');
         $('#strName').val('');
         $('#strTel').val('');
         $('#strAddress').val('');
-        $('#blActive').prop("checked", false);
+        $('#blActive').prop("checked", true);
         sessionStorage.removeItem('ClientEdit');
     });
     
@@ -60,6 +60,7 @@ $(document).ready( () => {
                 }
                 
                 toastr.Success('Cliente creado con exito');
+                LoadGrid();
     
                 $('#cardQR').html('');         
     
@@ -106,8 +107,8 @@ $(document).ready( () => {
                     return;
                 }
                 
-                toastr.Success('Cliente actualizado con exito');    
-                sessionStorage.removeItem('ClientEdit');
+                toastr.Success('Cliente actualizado con exito');
+                LoadGrid();
                     
             }).catch( error => {
                 toastr.Error('Contacta tu administrador');
@@ -159,14 +160,14 @@ $(document).ready( () => {
                     { 
                         command: [
                             { 
-                                iconClass: "btnEdit",
-                                text: "Editar",
-                                click: EditClient
-                            },
-                            { 
                                 iconClass: "btnQR",
                                 text: " ",
                                 click: DownloadQR
+                            },
+                            { 
+                                iconClass: "btnEdit",
+                                text: "Edit",
+                                click: EditClient
                             }
                         ], 
                         title: "Acciones"
@@ -182,11 +183,16 @@ $(document).ready( () => {
                     {
                         field: "StrAddress",
                         title: "Dirección"
+                    },
+                    {
+                        field: "BlActive",
+                        title: "Activo"
                     }
                 ]
             });
             
         }).catch( error => {
+            location.reload();
             toastr.Error('Contacta tu administrador');
         });
         
@@ -203,6 +209,7 @@ $(document).ready( () => {
 
             $('.modal').show();
         }
+        
         function DownloadQR(e) {
             $('.btnQR').prop('disabled', true);
             var dataItem = this.dataItem($(e.target).closest("tr")); 
