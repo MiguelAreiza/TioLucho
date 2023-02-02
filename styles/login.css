@@ -29,18 +29,6 @@
     width: 100%;
     margin: 1.5vh 0;
 }
-.formInput{
-    width: 100%;
-    background: var(--inputs);
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: center left 15px;
-    border: none;
-    border-radius: 1vh;
-    padding: 1.5vh 1.5vh 1.5vh 60px;
-    font-size: 1.2rem;
-    outline: none;
-}
 .btnForm{
     margin: 3vh auto 0;
 }
