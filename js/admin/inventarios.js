@@ -27,6 +27,7 @@ $(document).ready( () => {
 
     $('#btnAddInventory').click( () => {
         $('.modal').show();
+        $('#intAdd').hide();
         LoadUsers();
         LoadProducts();
     });
@@ -41,7 +42,16 @@ $(document).ready( () => {
         $('#productFk').prop('disabled', false);
         sessionStorage.removeItem('InventoryEdit');
     });
-        
+
+    $('#intLoad').keyup( (e) => {
+        $('#intStock').val(e.target.value);
+    });
+
+    $('#intAdd').change( (e) => {
+        $('#intLoad').val(parseInt(sessionStorage.Load) + parseInt(e.target.value));
+        $('#intStock').val(parseInt(sessionStorage.Stock) + parseInt(e.target.value));
+    });
+    
     $('#formInventory').submit( (e) => {
 
         e.preventDefault();
@@ -173,6 +183,10 @@ $(document).ready( () => {
         function EditInventory(e) {
             var dataItem = this.dataItem($(e.target).closest("tr"));
             sessionStorage.setItem('InventoryEdit', dataItem.Id);
+            
+            sessionStorage.setItem('Stock', dataItem.IntStock);
+            sessionStorage.setItem('Load', dataItem.IntLoad);
+            $('#intAdd').show();
 
             LoadUsers(dataItem.UserFk);
             LoadProducts(dataItem.ProductFk);
