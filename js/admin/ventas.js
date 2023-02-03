@@ -60,7 +60,7 @@ $(document).ready( () => {
                     }
                 },
             },
-            height: 500,
+            height: 600,
             scrollable: true,
             sortable: true,
             filterable: true,
