@@ -125,7 +125,7 @@ $(document).ready( () => {
                         }
                     },
                 },
-                height: 350,
+                height: 600,
                 scrollable: true,
                 sortable: true,
                 filterable: true,
