@@ -42,7 +42,7 @@ $(document).ready( () => {
         sessionStorage.removeItem('InventoryEdit');
     });
 
-    $('#intLoad').change( (e) => {
+    $('#intLoad').keyup( (e) => {
         $('#intStock').val(e.target.value);
     })
     
