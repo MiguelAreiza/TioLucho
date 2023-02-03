@@ -41,6 +41,10 @@ $(document).ready( () => {
         $('#productFk').prop('disabled', false);
         sessionStorage.removeItem('InventoryEdit');
     });
+
+    $('#intLoad').change( (e) => {
+        $('#intStock').val(e.target.value);
+    })
     
     $('#formInventory').submit( (e) => {
 
