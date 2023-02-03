@@ -39,6 +39,7 @@ $(document).ready( () => {
 
     $('#btnLogOut').click( () => {
         goLocation.ChangeView('../../login/');
+        sessionStorage.removeItem('AppUser');
     });
 
 });
