@@ -82,7 +82,12 @@ $(document).ready( () => {
                 {
                     field: "StrDate",
                     title: "Fecha",
-                    template: "#= StrDate.split('T')[0] #"
+                    template: "#= StrDate.split(',')[0] #"
+                },
+                {
+                    field: "StrDate",
+                    title: "Hora",
+                    template: "#= StrDate.split(',')[1] #"
                 },
                 {
                     field: "StrUser",

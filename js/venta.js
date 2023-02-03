@@ -96,7 +96,7 @@ $(document).ready( () => {
             return;
         }
 
-        ExecSp(`sp_CreateInvoice '${getUser.Id}', '${$('#strClient').val()}', '${new Date().toISOString()}'`).then(async data => {
+        ExecSp(`sp_CreateInvoice '${getUser.Id}', '${$('#strClient').val()}', '${new Date().toLocaleString().replace(' ', '')}'`).then(async data => {
 
             if (data[0].rpta == -1 || data[0].rpta == -2) {
                 toastr.Warning('Intentalo de nuevo, error al generar consecutivo');
