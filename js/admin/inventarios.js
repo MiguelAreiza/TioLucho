@@ -48,8 +48,13 @@ $(document).ready( () => {
     });
 
     $('#intAdd').change( (e) => {
-        $('#intLoad').val(parseInt(sessionStorage.Load) + parseInt(e.target.value));
-        $('#intStock').val(parseInt(sessionStorage.Stock) + parseInt(e.target.value));
+        if (!e.target.value) {            
+            $('#intLoad').val(parseInt(sessionStorage.Load));
+            $('#intStock').val(parseInt(sessionStorage.Stock));
+        } else {
+            $('#intLoad').val(parseInt(sessionStorage.Load) + parseInt(e.target.value));
+            $('#intStock').val(parseInt(sessionStorage.Stock) + parseInt(e.target.value));
+        }
     });
     
     $('#formInventory').submit( (e) => {
