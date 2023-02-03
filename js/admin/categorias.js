@@ -35,7 +35,7 @@ $(document).ready( () => {
         sessionStorage.removeItem('CategoryEdit');
     });
     
-    $('#formInventory').submit( (e) => {
+    $('#formCategory').submit( (e) => {
 
         e.preventDefault();
 

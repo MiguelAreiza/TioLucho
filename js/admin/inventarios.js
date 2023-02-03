@@ -42,7 +42,7 @@ $(document).ready( () => {
         sessionStorage.removeItem('InventoryEdit');
     });
     
-    $('#formProduct').submit( (e) => {
+    $('#formInventory').submit( (e) => {
 
         e.preventDefault();
 
