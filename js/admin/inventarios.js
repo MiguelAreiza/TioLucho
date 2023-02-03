@@ -38,6 +38,7 @@ $(document).ready( () => {
         $('#productFk').html('');
         $('#intLoad').val('');
         $('#intStock').val('');
+        $('#intAdd').val('');
         $('#userFk').prop('disabled', false);
         $('#productFk').prop('disabled', false);
         sessionStorage.removeItem('InventoryEdit');
