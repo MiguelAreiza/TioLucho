@@ -13,10 +13,6 @@
     justify-content: center;
     align-items: center;
 }
-.titleCard > img{
-    height: 4rem;
-    margin-right: 1rem;
-}
 .titleCard > label{
     font-size: 1.8rem;
     font-weight: 900;

@@ -23,40 +23,40 @@ $(document).ready( () => {
         goLocation.ChangeView('../');
     });
 
-    $('#cardClients').click( () => {        
-        goLocation.ChangeView('./clientes/');
+    $('#cardClients').click( () => {
+        location.href = './clientes/';
     });
 
     $('#cardCategories').click( () => {        
-        goLocation.ChangeView('./categorias/');
+        location.href = './categorias/';
     });
 
     $('#cardProducts').click( () => {        
-        goLocation.ChangeView('./productos/');
+        location.href = './productos/';
     });
 
     $('#cardRoutes').click( () => {        
-        goLocation.ChangeView('./rutas/');
+        location.href = './rutas/';
     });
 
     $('#cardSales').click( () => {        
-        goLocation.ChangeView('./ventas/');
+        location.href = './ventas/';
     });
 
     $('#cardInventories').click( () => {        
-        goLocation.ChangeView('./inventarios/');
+        location.href = './inventarios/';
     });
 
     $('#cardLiquidations').click( () => {        
-        goLocation.ChangeView('./liquidaciones/');
+        location.href = './liquidaciones/';
     });
 
     $('#cardUsers').click( () => {        
-        goLocation.ChangeView('./usuarios/');
+        location.href = './usuarios/';
     });
 
     $('#cardCosts').click( () => {        
-        goLocation.ChangeView('./gastos/');
+        location.href = './gastos/';
     });
 
 });
