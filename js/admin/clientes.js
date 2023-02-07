@@ -94,7 +94,7 @@ $(document).ready( () => {
                         toastr.Error('Contacta tu administrador');
                     });
                 
-                }, 1000);
+                }, 1500);
                     
             }).catch( error => {
                 toastr.Error('Contacta tu administrador');
