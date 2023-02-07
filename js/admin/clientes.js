@@ -160,8 +160,13 @@ $(document).ready( () => {
                     { 
                         command: [
                             { 
-                                iconClass: "btnQR",
+                                iconClass: "btnDelete",
                                 text: " ",
+                                click: DeleteClient
+                            },
+                            { 
+                                iconClass: "btnQR",
+                                text: "📥",
                                 click: DownloadQR
                             },
                             { 
@@ -220,6 +225,29 @@ $(document).ready( () => {
                 link.href = URL.createObjectURL(blob);
                 link.download = `${dataItem.StrName}Qr.png`;
                 link.click();
+            });
+        }
+
+        function DeleteClient(e) {
+            $('.btnDelete').prop('disabled', true);
+            var dataItem = this.dataItem($(e.target).closest("tr"));
+            
+            ExecSp(`sp_DeleteClient '${dataItem.Id}'`).then( data => {
+
+                if (data[0].rpta == -4) {
+                    toastr.Warning('No se puede eliminar, tiene relaciones en otras tablas');
+                    return;
+                }
+                if (data[0].rpta == -2) {                    
+                    toastr.Warning('Error al eliminar');
+                    return;
+                }
+                
+                toastr.Success('Cliente eliminado con exito');
+                LoadGrid();
+                    
+            }).catch( error => {
+                toastr.Error('Contacta tu administrador');
             });
         }
 

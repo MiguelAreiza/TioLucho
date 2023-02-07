@@ -140,7 +140,7 @@ $(document).ready( () => {
         }
 
         function DeleteCategory(e) {
-            $('.btnEdit').prop('disabled', true);
+            $('.btnDelete').prop('disabled', true);
             var dataItem = this.dataItem($(e.target).closest("tr"));
             
             ExecSp(`sp_DeleteCategory '${dataItem.Id}'`).then( data => {
