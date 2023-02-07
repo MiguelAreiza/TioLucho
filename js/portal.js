@@ -24,8 +24,8 @@ $(document).ready( () => {
     });
     
     $('#cardSale').click( () => {
-        goLocation.ChangeView('./venta/');
-        // location.href = './venta/';
+        // goLocation.ChangeView('./venta/');
+        location.href = './venta/';
     });
     
     $('#cardInventory').click( () => {
