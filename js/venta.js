@@ -40,6 +40,47 @@ $(document).ready( () => {
         goLocation.ChangeView('../');
     });
 
+    $('#blNotSale').change( (e) => {
+
+        if (e.target.checked) {
+            $('#ReasonField').show();
+            $('#btnNotificate').show();
+        } else {
+            $('#ReasonField').hide();
+            $('#btnNotificate').hide();
+        }
+
+    });
+
+    $('#notSale').submit( (e) => {
+
+        e.preventDefault();
+        
+        let reason = e.target[1].value;
+
+        if (!reason) {
+            toastr.Warning('Debes ingresar un motivo de no compra');
+            return;
+        }
+
+        ExecSp(`sp_CreateNotSale '${getUser.Id}', '${$('#strClient').val()}', '${new Date().toLocaleString().replace(' ', '')}', '${reason}'`).then( data => {
+
+            if (data[0].rpta == -1 || data[0].rpta == -2) {
+                toastr.Warning('Intentalo de nuevo, error al generar notificación');
+                return;
+            }
+            
+            toastr.Success('Notificación generada con exito');
+            setTimeout(() => {
+                goLocation.ChangeView('../');
+            }, 2000);
+        
+        }).catch( error => {
+            goLocation.ChangeView('../');
+        });
+
+    });
+
     var Scanner = new Html5QrcodeScanner(
         "reader", { 
             fps: 10, 

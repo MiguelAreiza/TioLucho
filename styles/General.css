@@ -236,6 +236,9 @@
 .cant {
     background-image: url('../assets/images/icons/Cant.png');
 }
+.reason {
+    background-image: url('../assets/images/icons/Reason.png');
+}
 
 /* Estilos de Footer */
 .footer{

@@ -122,3 +122,26 @@
     left: 0;
     z-index: 1000;
 }
+#notSale{
+    width: 100%;
+    margin: 3vh 0;
+    display: flex;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    align-items: center;
+}
+#notSale > div:nth-child(1){
+    width: 100%;
+    text-align: center;
+}
+#notSale > div:nth-child(3){
+    width: 100%;
+    text-align: center;
+}
+#ReasonField{
+    display: none;
+}
+#btnNotificate{
+    display: none;
+    margin-top: 2vh;
+}

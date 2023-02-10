@@ -48,11 +48,12 @@ $(document).ready( () => {
         let route = e.target[0].value;
         let name = e.target[1].value;
         let tel = e.target[2].value;
-        let address = e.target[3].value;
-        let active = (e.target[4].checked)? 1 : 0 ;
+        let contact = e.target[3].value;
+        let address = e.target[4].value;
+        let active = (e.target[5].checked)? 1 : 0 ;
         
         if (!sessionStorage.ClientEdit) {
-            ExecSp(`sp_CreateClient '${route}', '${name}', '${tel}', '${address}', ${active}`).then( data => {
+            ExecSp(`sp_CreateClient '${route}', '${name}', '${tel}', '${contact}', '${address}', ${active}`).then( data => {
 
                 if (data[0].rpta == -1 || data[0].rpta == -2) {
                     toastr.Info('Ya existe un cliente con estos datos');
@@ -100,7 +101,7 @@ $(document).ready( () => {
                 toastr.Error('Contacta tu administrador');
             });
         } else if (sessionStorage.ClientEdit){
-            ExecSp(`sp_UpdateClient '${sessionStorage.ClientEdit}', '${route}', '${name}', '${tel}', '${address}', ${active}`).then( data => {
+            ExecSp(`sp_UpdateClient '${sessionStorage.ClientEdit}', '${route}', '${name}', '${tel}', '${contact}', '${address}', ${active}`).then( data => {
 
                 if (data[0].rpta == 0 || data[0].rpta == -2) {
                     toastr.Warning('Error al actualizar el cliente');
@@ -138,6 +139,7 @@ $(document).ready( () => {
                             StrQRCode: { type: "string", editable: false },
                             StrName: { type: "string", editable: false },
                             StrTel: { type: "string", editable: false },
+                            StrContact: { type: "string", editable: false },
                             StrAddress: { type: "string", editable: false },
                             BlActive: { type: "string", editable: false }
                         }
@@ -186,6 +188,10 @@ $(document).ready( () => {
                         title: "Celular"
                     },
                     {
+                        field: "StrContact",
+                        title: "Contacto"
+                    },
+                    {
                         field: "StrAddress",
                         title: "Dirección"
                     },
@@ -208,6 +214,7 @@ $(document).ready( () => {
             LoadRoutes(dataItem.RouteFk);
             $('#strName').val(dataItem.StrName);
             $('#strTel').val(dataItem.StrTel);
+            $('#strContact').val(dataItem.StrContact);
             $('#strAddress').val(dataItem.StrAddress);
             $('#blActive').prop("checked", dataItem.BlActive);
             $('#cardQR').html(`<img style="display: block;" title="${dataItem.StrName}" src="${dataItem.StrQRCode}">`);
@@ -238,6 +245,7 @@ $(document).ready( () => {
                     toastr.Warning('No se puede eliminar, tiene relaciones en otras tablas');
                     return;
                 }
+                
                 if (data[0].rpta == -2) {                    
                     toastr.Warning('Error al eliminar');
                     return;

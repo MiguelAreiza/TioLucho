@@ -62,6 +62,26 @@
                 <button type="button" class="btnFormSale" id="btnSave">Guardar</button>
                 <button type="button" class="btnFormSale" id="btnCancel">Cancelar</button>
             </div>
+            <form id="notSale">
+                <div class="fieldForm">
+                    <label class="titleFieldForm">No compra</label>
+                    <input id="blNotSale" class="inputFieldForm" type="checkbox">
+                </div>
+                <div class="fieldForm" id="ReasonField">
+                    <label class="titleFieldForm">Motivo</label>
+                    <select class="inputFieldForm reason" id="reasonFk" required>
+                        <option value="">Motivo</option>
+                        <option value="Cerrado">Cerrado</option>
+                        <option value="Con inventario">Con inventario</option>
+                        <option value="Sin dinero">Sin dinero</option>
+                        <option value="Inconforme">Inconforme</option>
+                        <option value="Cerrado definitivo">Cerrado definitivo</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="btnNotificate" type="submit" class="btnFormSale" >Notificar</button>
+                </div>
+            </form>
         </div>
         <div class="footer">
             <div class="contactUs">

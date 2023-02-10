@@ -18,6 +18,9 @@
     height: 20px;
     transition: .6s;
 }
+.btnLarge{
+    margin-top: 3vh;
+}
 .btnDelete{    
     background-image: url('../../assets/images/icons/Delete.png');
 }
