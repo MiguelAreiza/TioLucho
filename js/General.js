@@ -2,15 +2,15 @@
 function Redirect() {
 
     this.Facebook = () => {
-        window.open('https://www.facebook.com/natalia.areizavalencia/');
+        window.open('https://www.facebook.com');
     }
 
     this.Instagram = () => {
-        window.open('https://www.instagram.com/natyareiza85/');
+        window.open('https://www.instagram.com');
     }
 
     this.WhatsApp = () => {
-        window.open('https://api.whatsapp.com/send?phone=573245026814&text=');        
+        window.open('https://api.whatsapp.com/send?phone=573137593407&text=¡Quiero contactar con tío lucho!');        
     }
     
 }
@@ -159,3 +159,13 @@ var redirect = new Redirect();
 var toastr = new Toastr();
 var goLocation = new GoLocation();
 var getUser = new GetUser();
+
+$('.facebook').click( () => {
+    redirect.Facebook()
+})
+$('.instagram').click( () => {
+    redirect.Instagram()
+})
+$('.whatsApp').click( () => {
+    redirect.WhatsApp()
+})
