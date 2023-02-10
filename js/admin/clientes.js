@@ -50,10 +50,11 @@ $(document).ready( () => {
         let tel = e.target[2].value;
         let contact = e.target[3].value;
         let address = e.target[4].value;
-        let active = (e.target[5].checked)? 1 : 0 ;
+        let delivery = (e.target[5].checked)? 1 : 0 ;
+        let active = (e.target[6].checked)? 1 : 0 ;
         
         if (!sessionStorage.ClientEdit) {
-            ExecSp(`sp_CreateClient '${route}', '${name}', '${tel}', '${contact}', '${address}', ${active}`).then( data => {
+            ExecSp(`sp_CreateClient '${route}', '${name}', '${tel}', '${contact}', '${address}', ${delivery}, ${active}`).then( data => {
 
                 if (data[0].rpta == -1 || data[0].rpta == -2) {
                     toastr.Info('Ya existe un cliente con estos datos');
@@ -90,6 +91,9 @@ $(document).ready( () => {
                         e.target[1].value = '';
                         e.target[2].value = '';
                         e.target[3].value = '';
+                        e.target[4].value = '';
+                        e.target[5].checked = false;
+                        e.target[6].checked = true;
                             
                     }).catch( error => {
                         toastr.Error('Contacta tu administrador');
@@ -101,7 +105,7 @@ $(document).ready( () => {
                 toastr.Error('Contacta tu administrador');
             });
         } else if (sessionStorage.ClientEdit){
-            ExecSp(`sp_UpdateClient '${sessionStorage.ClientEdit}', '${route}', '${name}', '${tel}', '${contact}', '${address}', ${active}`).then( data => {
+            ExecSp(`sp_UpdateClient '${sessionStorage.ClientEdit}', '${route}', '${name}', '${tel}', '${contact}', '${address}', ${delivery},${active}`).then( data => {
 
                 if (data[0].rpta == 0 || data[0].rpta == -2) {
                     toastr.Warning('Error al actualizar el cliente');
@@ -141,7 +145,8 @@ $(document).ready( () => {
                             StrTel: { type: "string", editable: false },
                             StrContact: { type: "string", editable: false },
                             StrAddress: { type: "string", editable: false },
-                            BlActive: { type: "string", editable: false }
+                            BlActive: { type: "string", editable: false },
+                            BlDelivery: { type: "string", editable: false }
                         }
                     },
                 },
@@ -198,6 +203,10 @@ $(document).ready( () => {
                     {
                         field: "BlActive",
                         title: "Activo"
+                    },
+                    {
+                        field: "BlDelivery",
+                        title: "Domicilio"
                     }
                 ]
             });
