@@ -42,6 +42,10 @@ $(document).ready( () => {
     $('#cardSales').click( () => {        
         location.href = './ventas/';
     });
+    
+    $('#cardNotSales').click( () => {        
+        location.href = './noCompras/';
+    });
 
     $('#cardInventories').click( () => {        
         location.href = './inventarios/';

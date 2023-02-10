@@ -1,0 +1,9 @@
+/* Estilos del pagecontent */
+.titleSales{
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 1rem 0;
+}
