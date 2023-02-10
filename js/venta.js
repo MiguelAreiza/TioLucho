@@ -73,7 +73,7 @@ $(document).ready( () => {
             toastr.Success('Notificación generada con exito');
             setTimeout(() => {
                 goLocation.ChangeView('../');
-            }, 2000);
+            }, 1500);
         
         }).catch( error => {
             goLocation.ChangeView('../');
@@ -165,7 +165,7 @@ $(document).ready( () => {
             toastr.Success('Factura generada con exito');
             setTimeout(() => {
                 goLocation.ChangeView('../');
-            }, 2000);
+            }, 1500);
         
         }).catch( error => {
             toastr.Error('Error al generar la factura, intentalo de nuevo');
