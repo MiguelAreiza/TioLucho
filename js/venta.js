@@ -10,6 +10,8 @@ if (!sessionStorage.AppUser) {
         }
     
         $('#nameUser').html(getUser.NameUser);
+        $('#nameRoute').html(getUser.NameRoute);
+        
         toastr.Success('Nueva venta');
         sessionStorage.removeItem('Delivery');
 

@@ -9,6 +9,7 @@ if (!sessionStorage.AppUser) {
             goLocation.ChangeView('../../../login/');
         }
     
+        $('#nameRoute').html(getUser.NameRoute);
         toastr.Success('Actualiza tu contraseña');
     
     }).catch( error => {

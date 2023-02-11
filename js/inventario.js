@@ -10,6 +10,7 @@ if (!sessionStorage.AppUser) {
         }
     
         $('#nameUser').html(getUser.NameUser);
+        $('#nameRoute').html(getUser.NameRoute);
         toastr.Success('Inventario actual');
     
     }).catch( error => {

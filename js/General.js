@@ -147,6 +147,8 @@ function GetUser() {
 
     this.NameUser = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).StrName : '';
 
+    this.NameRoute = (sessionStorage.AppUser) ? JSON.parse(sessionStorage.AppUser).StrRoute : '';
+
 }
 
 function MoneyCast(numb) {

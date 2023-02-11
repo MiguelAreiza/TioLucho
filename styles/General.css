@@ -42,13 +42,11 @@
     margin: 0 8px;
     cursor: pointer;
 }
-.imageText{
-    height: 30px;
-}
-.titleName{
+.titleName, .titleRoute{
     color: #fff;
     font-size: 1.3rem;
     text-align: right;
+    text-shadow: 1px 1px 2px #000;
     text-transform: capitalize;
 }
 .btnMenu{
