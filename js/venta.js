@@ -196,7 +196,7 @@ $(document).ready( () => {
     });
 
     $('#formSale').submit( (e) => {
-
+debugger
         e.preventDefault();
 
         let produ = e.target[0].value.split('/')[2];
@@ -205,7 +205,7 @@ $(document).ready( () => {
         let cantC = e.target[2].value;
         let total = e.target[3].value;
 
-        if (JSON.parse(sessionStorage.Delivery)) {
+        if (sessionStorage.Delivery) {
             total = MoneyCast(parseInt(cantV) * parseFloat(total));
         }
 
