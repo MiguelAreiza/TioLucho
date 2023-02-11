@@ -196,7 +196,7 @@ $(document).ready( () => {
     });
 
     $('#formSale').submit( (e) => {
-debugger
+
         e.preventDefault();
 
         let produ = e.target[0].value.split('/')[2];
