@@ -35,10 +35,16 @@
     flex-wrap: nowrap;
 }
 .headerForm > label{
-    width: 25%;
+    width: 22%;
     text-align: center;
     font-weight: 700;
     padding: 1vh;
+}
+.headerForm > label:first-child{
+    width: 31%;
+}
+.headerForm > label:nth-child(4){
+    width: 25%;
 }
 .record{
     display: flex;
@@ -55,8 +61,14 @@
     flex-wrap: wrap;
 }
 .inputField{
-    width: 25%;
+    width: 22%;
     margin: 2vh 0;
+}
+.inputField:first-child{
+    width: 31%;
+}
+.inputField:nth-child(4){
+    width: 25%;
 }
 .inputField > *{
     display: block;
