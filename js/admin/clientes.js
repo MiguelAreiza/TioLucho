@@ -54,7 +54,7 @@ $(document).ready( () => {
         let active = (e.target[6].checked)? 1 : 0 ;
         
         if (!sessionStorage.ClientEdit) {
-            ExecSp(`sp_CreateClient '${route}', '${name}', '${tel}', '${contact}', '${address}', ${delivery}, ${active}`).then( data => {
+            ExecSp(`sp_CreateClient '${route}', '${name}', '${tel}', '${contact}', '${address}', ${active}, ${delivery}`).then( data => {
 
                 if (data[0].rpta == -1 || data[0].rpta == -2) {
                     toastr.Info('Ya existe un cliente con estos datos');
@@ -105,7 +105,7 @@ $(document).ready( () => {
                 toastr.Error('Contacta tu administrador');
             });
         } else if (sessionStorage.ClientEdit){
-            ExecSp(`sp_UpdateClient '${sessionStorage.ClientEdit}', '${route}', '${name}', '${tel}', '${contact}', '${address}', ${delivery},${active}`).then( data => {
+            ExecSp(`sp_UpdateClient '${sessionStorage.ClientEdit}', '${route}', '${name}', '${tel}', '${contact}', '${address}', ${active}, ${delivery}`).then( data => {
 
                 if (data[0].rpta == 0 || data[0].rpta == -2) {
                     toastr.Warning('Error al actualizar el cliente');
@@ -225,6 +225,7 @@ $(document).ready( () => {
             $('#strTel').val(dataItem.StrTel);
             $('#strContact').val(dataItem.StrContact);
             $('#strAddress').val(dataItem.StrAddress);
+            $('#blDelivery').prop("checked", dataItem.BlDelivery);
             $('#blActive').prop("checked", dataItem.BlActive);
             $('#cardQR').html(`<img style="display: block;" title="${dataItem.StrName}" src="${dataItem.StrQRCode}">`);
 

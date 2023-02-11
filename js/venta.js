@@ -11,7 +11,8 @@ if (!sessionStorage.AppUser) {
     
         $('#nameUser').html(getUser.NameUser);
         toastr.Success('Nueva venta');
-    
+        sessionStorage.removeItem('Delivery');
+
     }).catch( error => {
         goLocation.ChangeView('../../login/');
     });
@@ -112,6 +113,14 @@ $(document).ready( () => {
             
             $('#strClient').html(`<option value="${data[0].Id}">${data[0].StrName}</option>`);
 
+            if (data[0].BlDelivery == 1) {
+                sessionStorage.setItem('Delivery','true');
+                $('#IntTotal').prop('disabled', false);
+            } else {
+                sessionStorage.removeItem('Delivery')
+                $('#IntTotal').prop('disabled', true);
+            }
+
             setTimeout(() => {                
                 $('#reader').remove();
             }, 200);
@@ -174,11 +183,13 @@ $(document).ready( () => {
     });
 
     $('#strProduct, #IntCantV').change( (e) => {
-        let cant = e.target.form[1].value;
-        let price = e.target.form[0].value.split('/')[1];
-
-        if (cant && price) {
-            e.target.form[3].value = MoneyCast(parseFloat(cant) * parseFloat(price));
+        if (!sessionStorage.Delivery) {
+            let cant = e.target.form[1].value;
+            let price = e.target.form[0].value.split('/')[1];
+    
+            if (cant && price) {
+                e.target.form[3].value = MoneyCast(parseFloat(cant) * parseFloat(price));
+            }
         }
     });
 
@@ -191,6 +202,10 @@ $(document).ready( () => {
         let cantV = e.target[1].value;
         let cantC = e.target[2].value;
         let total = e.target[3].value;
+
+        if (JSON.parse(sessionStorage.Delivery)) {
+            total = MoneyCast(parseInt(cantV) * parseFloat(total));
+        }
 
         if (sales.filter(sale => sale.prodId == prodId).length > 0) {
             toastr.Warning('Ya ingresaste este producto');
